@@ -2,12 +2,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
-
-typedef struct percent
-{
-	char *form;
-	int (*func_form)(va_list);
-} percent_func;
+#include "main.h"
 
 int (printchar(va_list arg))
 {
