@@ -49,15 +49,20 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == *find_percent[0].form)
-				find_percent[0].func_form(arg);
-			if (format[i + 1] == *find_percent[1].form)
-				find_percent[1].func_form(arg);
-			if (format[i + 1] == *find_percent[2].form)
-				find_percent[2].func_form(arg);
+			int j = 0;
+			while (find_percent[j].form != '\0')
+			{
+				if (format[i + 1] == *find_percent[j].form)
+					(find_percent[j].func_form(arg));
+				j++;
+			}
+			i += 2;
 		}
 		putchar(format[i]);
 	}
+	va_end(arg);
+	return (0);
+}
 	va_end(arg);
 	return (0);
 }
