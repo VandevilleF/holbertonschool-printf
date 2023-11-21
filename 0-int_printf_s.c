@@ -9,10 +9,10 @@ typedef struct percent
 	void (*func_form)(va_list);
 } percent_func;
 
-void (printchar(va_list arg))
+/*void (printchar(va_list arg))
 {
 	printf("char");
-}
+}*/
 
 void (printstr(va_list arg))
 {
@@ -23,10 +23,10 @@ void (printstr(va_list arg))
 		putchar(str[s]);
 }
 
-void (putmodulo(va_list arg))
+/*void (putmodulo(va_list arg))
 {
 	printf("modulo");
-}
+}*/
 
 /**
  * _printf - copy of fonction printf
@@ -36,13 +36,13 @@ void (putmodulo(va_list arg))
 
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int i;
 	int n = strlen(format);
 	
 	percent_func find_percent[] = {
-		{"c", printchar},
+		/*{"c", printchar},*/
 		{"s", printstr},
-		{"%", putmodulo},
+		/*{"%", putmodulo},*/
 		{NULL, NULL}
 	};
 	
@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			int j = 0;
-			while (find_percent[j].form != '\0')
+			while (find_percent[j].form != 0)
 			{
 				if (format[i + 1] == *find_percent[j].form)
 					(find_percent[j].func_form(arg));
