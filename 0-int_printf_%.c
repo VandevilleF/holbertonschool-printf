@@ -19,7 +19,7 @@ void (printstr(va_list arg))
 	printf("string");
 }*/
 
-void (putmodulo(__attribute__((unused))va_list arg))
+void (putmodulo(va_list arg))
 {
 	printf("modulo");
 }
