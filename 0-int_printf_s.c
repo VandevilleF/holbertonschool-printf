@@ -32,7 +32,7 @@ void (putmodulo(va_list))
  * _printf - copy of fonction printf
  * @format: string you need to print
  * Return: string
- */
+*/
 
 int _printf(const char *format, ...)
 {
