@@ -16,7 +16,7 @@ void (printchar(va_list arg))
 	putchar(c);
 }
 
-void (printstr(va_list arg))
+/* void (printstr(va_list arg))
 {
 	printf("string");
 }
@@ -25,7 +25,7 @@ void (putmodulo(va_list arg))
 {
 	printf("modulo");
 }
-
+*/ 
 /**
  * _printf - copy of fonction printf
  * @format: string you need to print
@@ -34,13 +34,13 @@ void (putmodulo(va_list arg))
 
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int i;
 	int n = strlen(format);
 	
 	percent_func find_percent[] = {
 		{"c", printchar},
-		{"s", printstr},
-		{"%", putmodulo},
+		/*{"s", printstr},*/
+		/*{"%", putmodulo},*/
 		{NULL, NULL}
 	};
 	
@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			int j = 0;
-			while (find_percent[j].form != '\0')
+			while (find_percent[j].form != 0)
 			{
 				if (format[i + 1] == *find_percent[j].form)
 					(find_percent[j].func_form(arg));
@@ -68,10 +68,7 @@ int _printf(const char *format, ...)
 
 int main(void)
 {
-    int len;
-    int len2;
-    unsigned int ui;
-    void *addr;
 	_printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
+	return(0);
 }
