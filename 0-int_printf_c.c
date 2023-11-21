@@ -6,14 +6,15 @@
 typedef struct percent
 {
 	char *form;
-	void (*func_form)(va_list);
+	int (*func_form)(va_list);
 } percent_func;
 
-void (printchar(va_list arg))
+int (printchar(va_list arg))
 {
 	char c;
 	c = va_arg(arg, int);
 	putchar(c);
+	return (1);
 }
 
 /* void (printstr(va_list arg))
