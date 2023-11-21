@@ -61,3 +61,5 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	return (0);
 }
+
+/* Don't forget to add the main !! */
