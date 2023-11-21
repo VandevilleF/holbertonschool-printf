@@ -11,7 +11,9 @@ typedef struct percent
 
 void (printchar(va_list))
 {
-	printf("char");
+	char c;
+	c = va_arg(arg, int)
+	putchar(c)
 }
 
 void (printstr(va_list))
@@ -61,3 +63,5 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	return (0);
 }
+
+
