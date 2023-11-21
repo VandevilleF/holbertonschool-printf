@@ -9,17 +9,17 @@ typedef struct percent
 	void (*func_form)(va_list);
 } percent_func;
 
-void (printchar(va_list))
+void (printchar(va_list arg))
 {
 	printf("char");
 }
 
-void (printstr(va_list))
+void (printstr(va_list arg))
 {
 	printf("string");
 }
 
-void (putmodulo(va_list))
+void (putmodulo(va_list arg))
 {
 	printf("modulo");
 }
@@ -55,9 +55,12 @@ int _printf(const char *format, ...)
 				find_percent[1].func_form(arg);
 			if (format[i + 1] == *find_percent[2].form)
 				find_percent[2].func_form(arg);
+			i +=2;
 		}
 		putchar(format[i]);
 	}
 	va_end(arg);
 	return (0);
 }
+
+/* Don't forget to add the main !! */
