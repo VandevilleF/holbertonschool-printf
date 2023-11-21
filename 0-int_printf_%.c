@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 int main(void)
 {
 
-	_printf("Percent:[%%%%]\n");
+	_printf("Percent:[%%]\n");
  	printf("Percent:[%%]\n");
 	return(0);
 }
