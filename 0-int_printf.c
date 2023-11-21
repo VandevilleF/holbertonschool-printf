@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 			while (find_percent[j].form != '\0')
 			{
 				if (format[i + 1] == *find_percent[j].form)
-					(find_percent[j].func_form(arg));
+					count += (find_percent[j].func_form(arg));
 				j++;
 			}
 			i += 2;
