@@ -9,12 +9,12 @@ typedef struct percent
 	void (*func_form)(va_list);
 } percent_func;
 
-void (printchar(va_list))
+void (printchar(va_list arg))
 {
 	printf("char");
 }
 
-void (printstr(va_list))
+void (printstr(va_list arg))
 {
 	int s;
 	char *str = va_arg(arg, char*);
@@ -23,7 +23,7 @@ void (printstr(va_list))
 		putchar(str[s]);
 }
 
-void (putmodulo(va_list))
+void (putmodulo(va_list arg))
 {
 	printf("modulo");
 }
