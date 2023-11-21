@@ -9,17 +9,17 @@ typedef struct percent
 	void (*func_form)(va_list);
 } percent_func;
 
-void (printchar(va_list))
+void (printchar(va_list arg))
 {
 	printf("char");
 }
 
-void (printstr(va_list))
+void (printstr(va_list arg))
 {
 	printf("string");
 }
 
-void (putmodulo(va_list))
+void (putmodulo(va_list arg))
 {
 	printf("modulo");
 }
@@ -63,6 +63,16 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	return (0);
 }
-	va_end(arg);
-	return (0);
+
+/* Don't forget to add the main !! */
+
+int main(void)
+{
+    int len;
+    int len2;
+    unsigned int ui;
+    void *addr;
+
+    len = _printf("Percent:[%%]\n");
+    len2 = printf("Percent:[%%]\n");
 }
