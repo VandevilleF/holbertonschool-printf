@@ -16,7 +16,11 @@ void (printchar(va_list))
 
 void (printstr(va_list))
 {
-	printf("string");
+	int s;
+	char *str = va_arg(arg, char*);
+
+	for (s = 0; str[s] != '\0'; s++)
+		putchar(str[s]);
 }
 
 void (putmodulo(va_list))
