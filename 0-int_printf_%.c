@@ -19,9 +19,10 @@ void (printstr(va_list arg))
 	printf("string");
 }*/
 
-void (putmodulo(va_list arg))
+void (putmodulo(__attribute__((unused))va_list arg))
+
 {
-	printf("modulo");
+	putchar('%');
 }
 
 /**
@@ -68,9 +69,8 @@ int _printf(const char *format, ...)
 
 int main(void)
 {
-	int len;
-    int len2;
-	len = _printf("Percent:[%%]\n");
-    len2 = printf("Percent:[%%]\n");
+
+	_printf("Percent:[%%]\n");
+ 	printf("Percent:[%%]\n");
 	return(0);
 }
