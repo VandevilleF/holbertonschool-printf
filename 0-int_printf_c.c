@@ -16,7 +16,7 @@ void (printchar(va_list arg))
 	putchar(c);
 }
 
-/* void (printstr(va_list arg))
+/*void (printstr(va_list arg))
 {
 	printf("string");
 }
@@ -24,8 +24,8 @@ void (printchar(va_list arg))
 void (putmodulo(va_list arg))
 {
 	printf("modulo");
-}
-*/ 
+}*/
+
 /**
  * _printf - copy of fonction printf
  * @format: string you need to print
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 	percent_func find_percent[] = {
 		{"c", printchar},
 		/*{"s", printstr},*/
-		/*{"%", putmodulo},*/
+		/*{"%", putmodulo},*/	
 		{NULL, NULL}
 	};
 	
@@ -66,9 +66,13 @@ int _printf(const char *format, ...)
 	return (0);
 }
 
+/* Don't forget to add the main !! */
+
 int main(void)
 {
-	_printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
+	int len;
+    int len2;
+	len = _printf("Personnalisé : Percent:[%%]\n");
+    len2 = printf("Original :     Percent:[%%]\n");
 	return(0);
 }
