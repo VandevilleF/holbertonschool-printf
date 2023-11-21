@@ -29,6 +29,7 @@ int _printf(const char *format, ...)
 {
 	int i, j;
 	int n = strlen(format);
+	int count = 0;
 	
 	percent_func find_percent[] = {
 		{"c", printchar},
@@ -54,9 +55,10 @@ int _printf(const char *format, ...)
 			i += 2;
 		}
 		putchar(format[i]);
+		count++;
 	}
 	va_end(arg);
-	return (0);
+	return (count);
 }
 
 /* Don't forget to add the main !! */
