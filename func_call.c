@@ -27,9 +27,12 @@ int (printstr(va_list arg))
 {
 	int s;
 	char *str = va_arg(arg, char*);
-
+	
 	if (str == NULL)
-		return (-1);
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	for (s = 0; str[s] != '\0'; s++)
 		putchar(str[s]);
 	return (s);
