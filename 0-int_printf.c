@@ -12,8 +12,6 @@
 
 int _printf(const char *format, ...)
 {
-	int i;
-	int n = strlen(format);
 	int count = 0;
 	
 	percent_func find_percent[] = {
@@ -24,25 +22,11 @@ int _printf(const char *format, ...)
 	};
 	
 	va_list arg;
-	va_start(arg, format);
 	
-	for (i = 0; i < n; i++)
-	{
-		if (format[i] == '%')
-		{
-			int j = 0;
-			while (find_percent[j].form != 0)
+	va_start(arg, format);
 
-			{
-				if (format[i + 1] == *find_percent[j].form)
-					count += (find_percent[j].func_form(arg));
-				j++;
-			}
-			i += 2;
-		}
-		putchar(format[i]);
-		count++;
-	}
+	count += get_up_func(format, find_percent, arg);
+	
 	va_end(arg);
 	return (count);
 }
