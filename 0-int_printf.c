@@ -13,20 +13,20 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
-	
+
 	percent_func find_percent[] = {
 		{"c", printchar},
 		{"s", printstr},
 		{"%", putmodulo},
 		{NULL, NULL}
 	};
-	
+
 	va_list arg;
-	
+
 	va_start(arg, format);
 
 	count += get_up_func(format, find_percent, arg);
-	
+
 	va_end(arg);
 	return (count);
 }
