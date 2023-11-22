@@ -1,5 +1,6 @@
 #ifndef __protect__
 #define __protect__
+#include <stdarg.h>
 
 /**
  * struct percent - function start with %

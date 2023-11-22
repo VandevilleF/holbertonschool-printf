@@ -1,23 +1,8 @@
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdarg.h>
 #include <string.h>
 #include "main.h"
-
-void (printchar(va_list arg))
-{
-	printf("char");
-}
-
-void (printstr(va_list arg))
-{
-	printf("string");
-}
-
-void (putmodulo(va_list arg))
-{
-	printf("modulo");
-}
 
 /**
  * _printf - copy of fonction printf
@@ -27,7 +12,7 @@ void (putmodulo(va_list arg))
 
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int i;
 	int n = strlen(format);
 	int count = 0;
 	
@@ -46,7 +31,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			int j = 0;
-			while (find_percent[j].form != '\0')
+			while (find_percent[j].form != 0)
+
 			{
 				if (format[i + 1] == *find_percent[j].form)
 					count += (find_percent[j].func_form(arg));
@@ -60,5 +46,3 @@ int _printf(const char *format, ...)
 	va_end(arg);
 	return (count);
 }
-
-/* Don't forget to add the main !! */
