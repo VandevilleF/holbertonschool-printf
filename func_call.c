@@ -30,7 +30,9 @@ int (printstr(va_list arg))
 	
 	if (str == NULL)
 	{
-		write(1, "(null)", 6);
+		str = "(null)";
+		for (s = 0; str[s] != '\0'; s++)
+			putchar(str[s]);
 		return (6);
 	}
 	for (s = 0; str[s] != '\0'; s++)
