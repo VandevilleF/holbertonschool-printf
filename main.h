@@ -23,5 +23,6 @@ int _printf(const char *format, ...);
 int (printchar(va_list arg));
 int (printstr(va_list arg));
 int (putmodulo(va_list));
+int printdec(va_list arg);
 
 #endif

@@ -46,3 +46,42 @@ int (putmodulo(__attribute__((unused))va_list arg))
 	putchar('%');
 	return (1);
 }
+
+/**
+ * printdec - print decimal and integer
+ * @arg: argument to print
+ * Return number decimal or integer and count
+ */
+
+int printdec(va_list arg)
+{
+	int i, numt, buffer, count = 0;
+	int num = va_arg(arg, int);
+	
+	if (num < 0)
+	{
+		num *= -1;
+		putchar('-');
+		count ++;
+	}
+	
+	buffer = num;
+	
+	for (numt = 0; (buffer / 10) > 0; numt++)
+		buffer /= 10;
+	buffer = num;
+	
+	while (numt != 0)
+	{
+		for(i = 0; i < numt; i++)
+			buffer /= 10;
+		buffer %= 10;
+		putchar(buffer + '0');
+		count++;
+		numt--;
+		buffer = num;
+	}
+	putchar(num % 10 + '0');
+	count++;
+	return (count);
+}
