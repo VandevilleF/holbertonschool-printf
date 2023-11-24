@@ -164,3 +164,5 @@ This is the lastest version of our printf
 ## License
 
 No liscence - This project has been created for educational purpose for  [Holberton School FR](https://www.holbertonschool.fr/)
+
+<a href="https://ibb.co/yhT0gGB"><img src="https://i.ibb.co/B4DLTdK/Flow-Chart.jpg" alt="Flow-Chart" border="0" /></a>
